@@ -6,7 +6,7 @@ import  avatar from './images/image-avatar.png';
 import menu from './images/icon-menu.svg';
 import close from './images/icon-close.svg';
 import Cart from './cart';
-export default function Nav() {
+export default function Nav(props) {
   const [show, setshow] = React.useState(false);
   const [Carts, setcart] = React.useState(false);
   // function win(){
@@ -50,7 +50,12 @@ export default function Nav() {
             <span className="cart-icon" >
                 <div className='cart-item' onClick={toggleCart}>1</div>
                 <img src={cart} alt="logo of cart" className='cart' onClick={toggleCart}/>
-                {Carts ? <Cart/> :null}
+                {Carts ? <Cart 
+                  name={props.name}
+                  oprice={props.oprice}
+                  prc={props.prc}
+                  cnt={props.cnt}
+                  /> :null}
             </span>
             <img src={avatar} alt="" className='avatar'/>
         </nav>

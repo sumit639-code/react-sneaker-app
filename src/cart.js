@@ -10,10 +10,10 @@ export default function Cart(props){
             <div className="items">
                 <img src={thumbnail} alt="shoe thubmnail" />
                 <p className="text text2">
-                    fall limited edition sneakers
-                    $125*3 = 
+                    {props.name}<br/>
+                    ${props.oprice}*{props.cnt} = 
                     <strong>
-                        $375
+                        ${props.prc}
                     </strong>
                 </p>
                 <img src={delet} alt="delete-icon" />

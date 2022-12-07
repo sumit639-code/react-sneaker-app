@@ -20,16 +20,34 @@ export default function App(){
         setcount(1)
         }
     }
-
+    const [ob,setob]=React.useState({
+        'name':"",
+        'oprice':"",
+        'prc':"",
+        'cnt':"",
+    });
 
     let items = data[0];
     function dataClick(){
-        console.log(items);
-        console.log(items.price*count);
+        var ob ={
+            id:items.id,
+            name:items.sneker,
+            oprice:items.price,
+            prc:items.price*count,
+            cnt:count,
+        }
+        setob(ob)
+        
     }
+    // console.log(ob.name);
     return(
         <div className="main-align">
-            <Nav/>   
+            <Nav 
+                name={ob.name}
+                oprice={ob.oprice}
+                prc={ob.prc}
+                cnt={ob.cnt}
+            /> 
             <div className='body-align'>
                 <Img/>
                 <Check 
