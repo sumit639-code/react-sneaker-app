@@ -1,8 +1,12 @@
 body{
     margin: 0px;
     padding: 0px;
+    height: 100vh;
 }
-
+html{
+    margin: 0px ;
+    padding: 0px;
+}
 
 /* nav designs for the webpage */
 
@@ -200,7 +204,7 @@ hr{
 .cart-info{
     cursor:auto;
     position: absolute;
-    top: 100%;
+    top: 130%;
     right: -100%;
     background-color: white;
     padding: 18px;
@@ -262,10 +266,11 @@ hr{
 }
 .body-align{
     width: 100%;
-    height: 90vh;
+    /* height: 50vh; */
     display: grid;
     place-items: center;
     grid-auto-flow: row;
+    margin-top: 40px;
 }
 .img-sync{
     display: grid;
@@ -398,6 +403,7 @@ hr{
 }
 .main-align{
     margin: 0px 10px;
+    /* width: 100%; */
 }
 @media only screen and (min-width:900px) {
     .body-align{
@@ -416,4 +422,42 @@ hr{
     .img-sync{
         margin-right:0px;
     }
+}
+
+.img-sync2{
+    display: grid;
+    min-width: 340px;
+    /* max-width: 600px; */
+    place-items: center;
+    gap: 10px;
+    margin: 0px;
+    padding: 0px;
+    margin: 20px;
+    
+}
+.body-img{
+    
+    z-index: 9999;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.555);
+}
+.img-sync2 img{
+    /* margin: 2px; */
+    transition: 300ms ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+.img-sync2 img:hover{
+    border: 2px solid white;
+}
+.no-item{
+    text-align: center;
+    
 }

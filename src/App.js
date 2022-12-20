@@ -2,11 +2,11 @@ import React from "react";
 import Nav from "./nav";
 // import Body from './body';
 import data from "./data";
-
 import Img from './img';
 import Check from './check';
 export default function App(){
     const pri=125;
+    const [num, setnum] = React.useState(0);
     const [count,setcount]=React.useState(1);
     function Plus(){
         setcount(count+1)
@@ -37,9 +37,19 @@ export default function App(){
             cnt:count,
         }
         setob(ob)
+        setnum(1);
         
     }
-    // console.log(ob.name);
+    function Add(){
+        setob({
+            'name':"",
+            'oprice':"",
+            'prc':"",
+            'cnt':"",
+        } )
+        setnum(0);
+    }
+
     return(
         <div className="main-align">
             <Nav 
@@ -47,13 +57,15 @@ export default function App(){
                 oprice={ob.oprice}
                 prc={ob.prc}
                 cnt={ob.cnt}
+                add={Add}
+                num={num}
             /> 
             <div className='body-align'>
                 <Img/>
                 <Check 
                     key = {data.id}
                     {...items}
-                    price={items.price*count}
+                    price={items.price}
                     click={dataClick}
                     count={count}
                     Plus={Plus}

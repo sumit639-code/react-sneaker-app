@@ -9,12 +9,8 @@ import Cart from './cart';
 export default function Nav(props) {
   const [show, setshow] = React.useState(false);
   const [Carts, setcart] = React.useState(false);
-  // function win(){
-  //   {window.onclick =toggle()}
-  // }
   function toggle(){
     setshow(prev => !prev)
-    // console.log(show)
   }
   function toggleCart(){
     setcart(prevs =>!prevs)
@@ -48,13 +44,14 @@ export default function Nav(props) {
                 <span className='line'></span>
             </div>
             <span className="cart-icon" >
-                <div className='cart-item' onClick={toggleCart}>1</div>
+                <div className='cart-item' onClick={toggleCart}>{props.num}</div>
                 <img src={cart} alt="logo of cart" className='cart' onClick={toggleCart}/>
                 {Carts ? <Cart 
                   name={props.name}
                   oprice={props.oprice}
                   prc={props.prc}
                   cnt={props.cnt}
+                  add={props.add}
                   /> :null}
             </span>
             <img src={avatar} alt="" className='avatar'/>

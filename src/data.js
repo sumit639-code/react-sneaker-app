@@ -1,3 +1,5 @@
+
+
 export default [{
     id:1,
     com:"Sneaker Company",
@@ -6,4 +8,5 @@ export default [{
     price:125,
     dis:50,
     orgprice:"250.00",
+    
 }]
